@@ -1042,26 +1042,27 @@ h1 {
 }
 
 .certificate-stage {
+  display: grid;
+  overflow: hidden;
+  place-items: center;
   height: clamp(24rem, 42vw, 36rem);
-  padding: clamp(0.8rem, 2.5vw, 2.2rem);
+  padding: clamp(0.65rem, 1.5vw, 1.15rem);
   border: 1px solid rgba(171, 90, 237, 0.35);
   border-radius: 1.5rem;
-  background:
-    radial-gradient(ellipse at 50% 50%, rgba(118, 52, 151, 0.2), transparent 70%),
-    rgba(19, 10, 28, 0.52);
+  background: #f7f4fa;
 }
 
 .certificate-preview-wrap {
   min-width: 0;
 }
 
-.certificate-document {
+.certificate-image {
   display: block;
   width: 100%;
-  height: 100%;
-  border-radius: 0.8rem;
-  background: #fff;
-  color-scheme: light;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 0.45rem;
+  box-shadow: 0 0.45rem 1.4rem rgba(20, 10, 28, 0.14);
 }
 
 .certificate-open {

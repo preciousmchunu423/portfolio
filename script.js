@@ -60,18 +60,21 @@ const certificates = [
     title: "IT Essentials: PC Hardware and Software",
     year: "2025",
     description: "IT Essentials covers personal computer hardware, software and troubleshooting.",
+    preview: "it-essentials-preview.png",
     file: "it-essentials.pdf"
   },
   {
     title: "Introduction to Data Science",
     year: "2025",
     description: "Introduction to data science concepts and working with data.",
+    preview: "data-science-preview.png",
     file: "data-science.pdf"
   },
   {
     title: "Introduction to Cybersecurity",
     year: "2026",
     description: "Introduction to cybersecurity, online safety and digital threats.",
+    preview: "cybersecurity-preview.png",
     file: "cybersecurity.pdf"
   }
 ];
@@ -81,7 +84,7 @@ const certificateName = document.querySelector("#certificate-name");
 const certificateCounter = document.querySelector("#certificate-counter");
 const certificateIssuer = document.querySelector("#certificate-issuer");
 const certificateDescription = document.querySelector(".certificate-description");
-const certificateDocument = document.querySelector(".certificate-document");
+const certificateImage = document.querySelector(".certificate-image");
 const certificateOpenLink = document.querySelector(".certificate-open");
 const certificateDots = document.querySelector(".carousel-dots");
 const certificateStage = document.querySelector(".certificate-stage");
@@ -102,10 +105,9 @@ function showCertificate(index) {
   certificateName.textContent = certificate.title;
   certificateIssuer.textContent = `Cisco Networking Academy · ${certificate.year}`;
   certificateDescription.textContent = certificate.description;
-  certificateDocument.title = `${certificate.title} certificate`;
-  const documentUrl = `${certificate.file}#toolbar=0&navpanes=0&view=FitH`;
-  if (certificateDocument.getAttribute("src") !== documentUrl) {
-    certificateDocument.src = documentUrl;
+  certificateImage.alt = `${certificate.title} certificate`;
+  if (certificateImage.getAttribute("src") !== certificate.preview) {
+    certificateImage.src = certificate.preview;
   }
   certificateOpenLink.href = certificate.file;
   certificateOpenLink.setAttribute("aria-label", `Open ${certificate.title} certificate in a new tab`);
